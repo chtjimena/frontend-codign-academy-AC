@@ -1,0 +1,61 @@
+.primer-bloque {
+    width: 300px;
+    background-color: #b281dc;
+    color: rgb(156, 75, 75);
+    padding: 15px;
+    border: 2px solid red;
+    margin: 10px;
+}
+
+#segundo-bloque {
+    width: 150px;
+    height: 80px;
+    background-color: #eaba16;
+    color: black;
+    padding: 35px;
+    margin: 35px;
+    box-shadow: 5px 5px 5px 5px #cdcdcd;
+}
+
+#segundo-bloque > p {
+ color: green;
+}
+
+#tercer-bloque {
+    width: 150px;
+    height: 80px;
+    background-color: rgba(190, 40, 150, 0.1);
+    color: black;
+    padding: 35px;
+    margin: 35px;
+}
+
+#tercer-bloque:hover {
+    background-color: rgb(40, 60, 170);
+}
+
+.bloque-verde {
+    width: 25%;
+    height: 70px;
+    background-color: green;
+}
+
+section {
+    background-color: rgb(230, 180, 170);
+}
+
+.contenedor {
+    background-color: #cdcdcd;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between
+}
+
+.contenedor > div {
+    display: flex;
+}
+
+.contenedor .bloque {
+    background-color: #eaba16;
+    padding: 10px;
+}
