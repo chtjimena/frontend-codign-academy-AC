@@ -1,0 +1,42 @@
+.caja-animada {
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    position: relative;
+    animation: moverCaja 3s infinite alternate ease-in-out;
+}
+
+@keyframes moverCaja {
+    0% {
+        left: 0px;
+        background-color: aqua;
+    }
+    50% {
+        left: -50px;
+        background-color: chartreuse;
+    }
+    100% {
+        left: 0px;
+        background-color: brown;
+    }
+}
+
+.banner-animado {
+    width: 800px;
+    height: 400px;
+    background-image: url("https://images.pexels.com/photos/19691166/pexels-photo-19691166.jpeg");
+    position: relative;
+    animation: cambiarImg 3s infinite alternate ease-in-out;
+}
+
+@keyframes cambiarImg {
+    0% {
+        background-image: url("https://images.pexels.com/photos/5769564/pexels-photo-5769564.jpeg");
+    }
+    50% {
+        background-image: url("https://images.pexels.com/photos/12066969/pexels-photo-12066969.jpeg");
+    }
+    100% {
+        background-image: url("https://images.pexels.com/photos/13734175/pexels-photo-13734175.jpeg");
+    }
+}

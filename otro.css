@@ -1,0 +1,66 @@
+.position-relative {
+    width: 80px;
+    height: 80px;
+    background-color: blue;
+    padding: 20px;
+    /*border-radius: 100%;*/
+    position: relative;
+    /*float: left;*/
+    /*right: -55px;
+    bottom: -55px;*/
+}
+
+.position-absolute {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(37, 251, 37);
+    padding: 7px;
+    border-radius: 100%;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+
+.position-fixed {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(12, 243, 193);
+    padding: 20px;
+    border-radius: 100%;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.imagen-de-fondo {
+    width: 100%;
+    height: 600px;
+    background-image: url("https://images.pexels.com/photos/11264535/pexels-photo-11264535.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.flex-container div {
+    padding: 20px;
+    background-color: brown;
+    color: #000
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+.grid-container div {
+    padding: 20px;
+    background-color: rgb(225, 178, 51);
+    color: #000
+}
