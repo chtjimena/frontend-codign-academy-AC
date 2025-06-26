@@ -7,6 +7,12 @@ window.addEventListener('load', async () => {
 
     const productList = document.getElementById('product-list');
     if (productList) {
+        // buscar y agregar producto al carrito almacenado en local storage
+        const getCarritoLocal = localStorage.getItem('carrito');
+        if (getCarritoLocal) {
+            agregarProductoAlCarrito(getCarritoLocal);
+        }
+        // Crear tarjetas de productos
         data.forEach(product => {
             const col = document.createElement("div");
             col.className = "col-12 col-sm-6 col-md-4 col-lg-3 mb-4";
@@ -23,7 +29,7 @@ const getCardProduct = (product) => {
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">${product.title}</h5>
                         <p class="card-text fw-bold">$${product.price.toFixed(2)}</p>
-                        <button class="btn btn-primary mt-auto" onclick="agregarProductoAlCarrito('${product.id}')"><i class="bi bi-cart3"></i>Agregar al carrito</button>
+                        <button class="btn btn-primary mt-auto btn-agregar-producto" data-id-product="${product.id}" id="btn-agregar-producto"><i class="bi bi-cart3"></i>Agregar al carrito</button>
                     </div>
                 </div>
             `;
@@ -44,12 +50,29 @@ const crearProductoEnCarrito = (product) => {
     `
 }
 
+setTimeout(function() {
+    const btnAgregarAlCarritoElements = document.querySelectorAll('.btn-agregar-producto');
+    btnAgregarAlCarritoElements.forEach(btnAgregarAlCarritoElement => {
+        btnAgregarAlCarritoElement.addEventListener('click', () => {
+        const idProducto = btnAgregarAlCarritoElement.getAttribute('data-id-product');
+        if (idProducto) {
+            agregarProductoAlCarrito(idProducto);
+            localStorage.setItem('carrito', idProducto);
+        }
+    })
+})
+}, 2000)
+
 const agregarProductoAlCarrito = (idProducto) => {
     console.log(' idProducto ', idProducto, data);
     const findProduct = data.find(product => product.id == idProducto)
-    console.log('findProduct ', findProduct);
     const containerCarrito = document.querySelector('.cart-items');
     if (containerCarrito) {
-        containerCarrito.innerHTML = crearProductoEnCarrito(findProduct);
+        const itemCarrito = document.createElement('div');
+        itemCarrito.innerHTML = crearProductoEnCarrito(findProduct)
+        containerCarrito.appendChild(itemCarrito);
+        // sumar el contador de carrito
+        const countCartElement = document.getElementById('countProductCart');
+        countCartElement.innerText = Number(countCartElement.innerHTML) + 1;
     }
 }
