@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container my-5">
+            <h2 class="mb-4">Formulario de contacto</h2>
+            <span id="mensaje-exitoso" class="text-success"></span>
+            <form id="formulario">
+                <!-- Nombre -->
+                <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+                </div>
+
+                <!-- Correo electrónico -->
+                <div class="mb-3">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="text" class="form-control" id="correo" placeholder="nombre@ejemplo.com">
+                </div>
+
+                <!-- Teléfono -->
+                <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" placeholder="+593 123 456 789">
+                </div>
+
+                <!-- Selección de país -->
+                <div class="mb-3">
+                <label for="pais" class="form-label">País</label>
+                <select class="form-select" id="pais">
+                    <option selected disabled>Selecciona un país</option>
+                    <option value="ec">Ecuador</option>
+                    <option value="pe">Perú</option>
+                    <option value="co">Colombia</option>
+                    <option value="mx">México</option>
+                    <option value="ca">Canada</option>
+                    <option value="br">Brasil</option>
+                    <option value="cb">Cuba</option>
+                    <option value="ar">Argentina</option>
+                </select>
+                </div>
+
+                <!-- Género (radio) -->
+                <div class="mb-3">
+                <label class="form-label">Género</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="genero" id="masculino" value="masculino">
+                    <label class="form-check-label" for="masculino">Masculino</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="genero" id="femenino" value="femenino">
+                    <label class="form-check-label" for="femenino">Femenino</label>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Aficiones (checkbox) -->
+                <div class="mb-3">
+                <label class="form-label">Aficiones</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="leer" value="leer">
+                    <label class="form-check-label" for="leer">Leer</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="viajar" value="viajar">
+                    <label class="form-check-label" for="viajar">Viajar</label>
+                </div>
+                </div>
+
+                <!-- Comentarios (textarea) -->
+                <div class="mb-3">
+                <label for="comentarios" class="form-label">Comentarios</label>
+                <textarea class="form-control" id="comentarios" rows="4" placeholder="Escribe tus comentarios aquí..."></textarea>
+                </div>
+
+                <!-- Botón de envío -->
+                <button type="submit" id="btn-enviar" class="btn btn-primary">Enviar</button>
+            </form>
+            </div>
+
+            <script src="formulario.js"></script>
+    </body>
+</html>
