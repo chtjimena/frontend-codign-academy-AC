@@ -1,6 +1,17 @@
 const btnAgregarElement = document.getElementById('btn-agregar');
 const listaTareaElement = document.getElementById('lista');
 const inputTareaElement = document.getElementById('tarea');
+const LOCAL_STORAGE_KEY = 'lista-de-compras';
+
+const local = localStorage.getItem(LOCAL_STORAGE_KEY);
+const lista = JSON.parse(local) || [];
+
+window.addEventListener('load', () => {
+    lista.forEach(tarea => {
+        const tareaElement = crearTareaElement(tarea);
+        listaTareaElement.appendChild(tareaElement);
+    })
+});
 
 btnAgregarElement.addEventListener('click', () => {
     agregarTareaALista();
@@ -27,10 +38,8 @@ const agregarTareaALista = () => {
         return;
     }
 
-    console.log('valueInputTarea ', valueInputTarea);
     // crear nuevo elemento con js
-    const tarea = document.createElement('li');
-    tarea.innerText = valueInputTarea;
+    const tarea = crearTareaElement(valueInputTarea);
 
     // crear acción de eliminar
     const btnEliminarTarea = document.createElement('button');
@@ -55,4 +64,14 @@ const agregarTareaALista = () => {
 
     // limpiar input
     inputTareaElement.value = '';
+
+    // guardar lista
+    lista.push(valueInputTarea);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(lista));
+}
+
+const crearTareaElement = (value) => {
+    const tarea = document.createElement('li');
+    tarea.innerText = value;
+    return tarea;
 }
