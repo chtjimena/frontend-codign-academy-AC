@@ -18,9 +18,6 @@ const inputSearchElement = document.getElementById('inputSearch');
 
 inputSearchElement.addEventListener('keyup', (event) => console.log('sol-tastes la tecla', event.target.value))
 
-const selectOptionElement = document.getElementById('select-options');
-selectOptionElement.addEventListener('change', () => console.log('has seleccionado la opcion '))
-
 window.addEventListener('scroll', () => {
     // console.log('estas haciendo scroll ', window.scrollY);
 
